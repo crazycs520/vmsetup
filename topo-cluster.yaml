@@ -8,8 +8,6 @@ server_configs:
     log.level: "error"
   tikv:
     log.level: "error"
-    rocksdb.defaultcf.block-cache-size: "4.8GB"
-    rocksdb.writecf.block-cache-size: "1.2GB"
 
 pd_servers:
   - host: 10.116.0.8
@@ -29,11 +27,14 @@ tiflash_servers:
   - host: 10.116.0.9
 
 monitoring_servers:
-  - host: 10.116.0.2
+  - host: 127.0.0.1
     ng_port: 12020
 
 grafana_servers:
-  - host: 10.116.0.2
+  - host: 127.0.0.1
 
 alertmanager_servers:
-  - host: 10.116.0.2
+  - host: 127.0.0.1
+
+
+tiup bench tpcc -H 10.116.0.10,10.116.0.11 -P 4000 -D tpcc --warehouses 100 prepare -T 16
