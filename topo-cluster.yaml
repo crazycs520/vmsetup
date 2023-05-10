@@ -10,31 +10,30 @@ server_configs:
     log.level: "error"
 
 pd_servers:
-  - host: 10.116.0.8
-
-tidb_servers:
+  - host: 10.116.0.9
   - host: 10.116.0.10
   - host: 10.116.0.11
 
-tikv_servers:
+tidb_servers:
   - host: 10.116.0.3
   - host: 10.116.0.4
-  - host: 10.116.0.5
-  - host: 10.116.0.6
 
-tiflash_servers:
+tikv_servers:
+  - host: 10.116.0.6
+  - host: 10.116.0.8
   - host: 10.116.0.7
-  - host: 10.116.0.9
+  - host: 10.116.0.5
+
+# tiflash_servers:
+#   - host: 10.116.0.7
+#   - host: 10.116.0.9
 
 monitoring_servers:
-  - host: 127.0.0.1
+  - host: 10.116.0.2
     ng_port: 12020
 
 grafana_servers:
-  - host: 127.0.0.1
+  - host: 10.116.0.2
 
 alertmanager_servers:
-  - host: 127.0.0.1
-
-
-tiup bench tpcc -H 10.116.0.10,10.116.0.11 -P 4000 -D tpcc --warehouses 100 prepare -T 16
+  - host: 10.116.0.2
