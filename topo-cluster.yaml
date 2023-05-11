@@ -8,13 +8,11 @@ server_configs:
     log.level: "error"
   tikv:
     log.level: "error"
-#    rocksdb.defaultcf.block-cache-size: "38GB"
-#    rocksdb.writecf.block-cache-size: "9.6GB"
+    rocksdb.defaultcf.block-cache-size: "38GB"  
+    rocksdb.writecf.block-cache-size: "10GB"
 
 pd_servers:
-  - host: 10.116.0.9
-  - host: 10.116.0.10
-  - host: 10.116.0.11
+  - host: 10.116.0.5
 
 tidb_servers:
   - host: 10.116.0.3
@@ -22,9 +20,9 @@ tidb_servers:
 
 tikv_servers:
   - host: 10.116.0.6
-  - host: 10.116.0.8
   - host: 10.116.0.7
-  - host: 10.116.0.5
+  - host: 10.116.0.8
+  - host: 10.116.0.9
 
 # tiflash_servers:
 #   - host: 10.116.0.7
